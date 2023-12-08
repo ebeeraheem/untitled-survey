@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.beforedot {
+  position: relative;
+  /* color: #999; */
+}
+
+.beforedot::before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: #999;
+  position: absolute;
+  top: 8px;
+  left: 12px;
+}
+
+.hideRadio {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.hideRadio:checked + .showCustom {
+  transform: translateY(-50%) scale(1.1);
+  border: 3px solid #4c8bf5;
+  color: #4c8bf5;
+}
+.question label:hover .showCustom {
+  transform: translateY(-50%) scale(1.1);
+  border-color: #4c8bf5;
+  box-shadow: 0 0 10px #4c8bf580;
+}
+
+.showCustom {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  border: 1px solid #464646;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.question label {
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+textarea {
+  outline-color: #4c8bf5;
+}
+
+/* .horizontal::before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 12px;
+  background-color: black;
+} */
